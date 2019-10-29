@@ -18,10 +18,10 @@ async function firstTest(){
         browser.get('http://beasiswa.polinema.ac.id/');
 
         await browser.getTitle().then(function(title){
-            console.log(title)
+            expect(title).to.equal('Fauzan');
         });
-        browser.quit();
     }
+    // Catching the fail try of the function
     catch(err){
         handleFailure(err, browser)
     }
@@ -29,7 +29,21 @@ async function firstTest(){
 
 
 // This is second test for click home feature
+// async function secodTest(){
+//     try{
+//         var browser = new webdriver.Builder()
+//         .withCapabilities(webdriver.Capabilities.chrome())
+//         .build();
 
+//         await
+
+//         browser.get('http://beasiswa.polinema.ac.id/persyaratan');
+//     }
+
+//     catch(err){
+//         handleFailure(err, browser)
+//     }
+// }
 
 
 // This running the first test
@@ -37,10 +51,8 @@ firstTest();
 
 
 
-
 // This is error handle
 function handleFailure(err, browser){
     console.log('Something went wrong! \n', err.stack,'\n');
-
     browser.quit();
 }
