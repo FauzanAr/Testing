@@ -35,6 +35,10 @@ describe('Navbar Testing', function(){
         })
     })
 
+    it('Test case to redirect to /beranda', function(){
+        var xpathUrl = "//a[contains(text(),'Beranda')]"
+        browser.findElement(webdriver.By.xpath(xpathUrl)).click();
+    })
 
     it('Test case to redirect to /persyaratan', function(){
         var xpathUrl = "//a[contains(text(),'Persyaratan')]"
