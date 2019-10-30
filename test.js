@@ -52,6 +52,7 @@ describe('Navbar Testing', function(){
 
     it('Test case to test search box', function(){
         browser.findElement(webdriver.By.name('search')).sendKeys('Testing');
+        browser.findElement(webdriver.By.name('btn_search')).click();
     })
 
     it('Test case to redirect to /login', function(){

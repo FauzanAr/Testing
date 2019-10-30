@@ -23,6 +23,7 @@
     "webdriverio": "^5.11.13"
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
     "mocha": "^6.2.2"
   }
 }
