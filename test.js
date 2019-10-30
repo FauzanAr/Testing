@@ -1,4 +1,4 @@
-// Importing selenium webdriver for our web driver
+// Importing selenium webdriver for our web browser
 var webdriver = require('selenium-webdriver');
 var chrome = require('selenium-webdriver/chrome');
 var chromedriver = require('chromedriver');
@@ -12,14 +12,14 @@ var browser = new webdriver.Builder()
             .withCapabilities(webdriver.Capabilities.chrome())
             .build();
 
-describe('First Test', function(){
+describe('Home Testing', function(){
+
     before(function(){
         browser.get('http://beasiswa.polinema.ac.id/');
     });
 
-    after(function(){
-        browser.quit();
-    });
+    this.beforeEach(done => setTimeout(done, 1800));
+
 
     it('Test case the title should "Beasiswa Polinema"', function(){
         browser.getTitle().then(function(title){
@@ -27,9 +27,33 @@ describe('First Test', function(){
         })
     });
 
+
     it('Test case the title not should "Testing"', function(){
         browser.getTitle().then(function(title){
             expect(title).to.not.equals('Testing');
         })
     })
+
+
+    it('Test case to redirect to /persyaratan', function(){
+        var xpathUrl = "//a[contains(text(),'Persyaratan')]"
+        browser.findElement(webdriver.By.xpath(xpathUrl)).click();
+    })
 });
+
+// describe('Pengumuman Testing', function(){
+//     before(function(){
+//         browser.get('http://beasiswa.polinema.ac.id/pengumuman');
+//     });
+
+//     after(function(){
+//         console.log('Success');
+//     });
+
+//     it('It test the search box', function(){
+//         browser.findElement(webdriver.By.name('search')).sendKeys('Anjing');
+//         browser.wait(function(){
+//             return browser.isElementPresent(webdriver.By.)
+//         });
+//     });
+// });

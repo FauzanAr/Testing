@@ -19,7 +19,8 @@
   "dependencies": {
     "chai": "^4.2.0",
     "chromedriver": "^78.0.1",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "selenium-webdriver": "^4.0.0-alpha.5",
+    "webdriverio": "^5.11.13"
   },
   "devDependencies": {
     "mocha": "^6.2.2"
