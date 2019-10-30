@@ -13,7 +13,7 @@ var browser = new webdriver.Builder()
             .withCapabilities(webdriver.Capabilities.chrome())
             .build();
 
-describe('Home Testing', function(){
+describe('Navbar Testing', function(){
 
     before(function(){
         browser.get('http://beasiswa.polinema.ac.id/');
@@ -45,6 +45,16 @@ describe('Home Testing', function(){
         var xpathUrl = "//a[contains(text(),'Pengumuman')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
     })
+
+    it('Test case to redirect to /login', function(){
+        var xpathUrl = "//a[contains(text(),'Login')]"
+        browser.findElement(webdriver.By.xpath(xpathUrl)).click();
+    })
+
+    it('Test case to redirect to /kontak', function(){
+        var xpathUrl = "//a[contains(text(),'Kontak')]"
+        browser.findElement(webdriver.By.xpath(xpathUrl)).click();
+    })    
 });
 
 // describe('Pengumuman Testing', function(){
