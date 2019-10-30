@@ -19,7 +19,7 @@ describe('Navbar Testing', function(){
         browser.get('http://beasiswa.polinema.ac.id/');
     });
 
-    this.beforeEach(done => setTimeout(done, 1000));
+    this.beforeEach(done => setTimeout(done, 1500));
 
 
     it('Test case the title should "Beasiswa Polinema"', function(){
@@ -60,6 +60,12 @@ describe('Navbar Testing', function(){
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
     })
 
+    it('Test case to test login', function(){
+        browser.findElement(webdriver.By.name('username')).sendKeys('1741720212');
+        browser.findElement(webdriver.By.name('password')).sendKeys('1741720212');
+        browser.findElement(webdriver.By.name('btnLogin')).click();
+    })
+
     it('Test case to redirect to /kontak', function(){
         var xpathUrl = "//a[contains(text(),'Kontak')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
@@ -69,26 +75,9 @@ describe('Navbar Testing', function(){
         this.afterAll(function(){
             setTimeout(() => {
                 browser.quit();
-            }, 1500);
+            }, 2000);
         });   
     } catch (error) {
         console.log(error);
     }
 });
-
-// describe('Pengumuman Testing', function(){
-//     before(function(){
-//         browser.get('http://beasiswa.polinema.ac.id/pengumuman');
-//     });
-
-//     after(function(){
-//         console.log('Success');
-//     });
-
-//     it('It test the search box', function(){
-//         browser.findElement(webdriver.By.name('search')).sendKeys('Anjing');
-//         browser.wait(function(){
-//             return browser.isElementPresent(webdriver.By.)
-//         });
-//     });
-// });
