@@ -19,7 +19,7 @@ describe('Navbar Testing', function(){
         browser.get('http://beasiswa.polinema.ac.id/');
     });
 
-    this.beforeEach(done => setTimeout(done, 1800));
+    this.beforeEach(done => setTimeout(done, 1000));
 
 
     it('Test case the title should "Beasiswa Polinema"', function(){
@@ -59,10 +59,15 @@ describe('Navbar Testing', function(){
         var xpathUrl = "//a[contains(text(),'Kontak')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
     })
-    
-    after(function(){
-        browser.quit();
-    });
+    try {
+        this.afterAll(function(){
+            setTimeout(() => {
+                browser.quit();
+            }, 1500);
+        });   
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 // describe('Pengumuman Testing', function(){
