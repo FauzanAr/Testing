@@ -58,7 +58,11 @@ describe('Navbar Testing', function(){
     it('Test case to redirect to /kontak', function(){
         var xpathUrl = "//a[contains(text(),'Kontak')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
-    })    
+    })
+    
+    after(function(){
+        browser.quit();
+    });
 });
 
 // describe('Pengumuman Testing', function(){
