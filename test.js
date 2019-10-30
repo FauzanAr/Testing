@@ -3,6 +3,7 @@ var webdriver = require('selenium-webdriver');
 var chrome = require('selenium-webdriver/chrome');
 var chromedriver = require('chromedriver');
 var chai = require('chai');
+var assert = require('assert');
 var expect = chai.expect;
 
 // Setting path for code to opening the chrome browser
@@ -38,6 +39,29 @@ describe('Home Testing', function(){
     it('Test case to redirect to /persyaratan', function(){
         var xpathUrl = "//a[contains(text(),'Persyaratan')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
+
+        try {
+            browser.getCurrentUrl().then(function(url){
+                console.log(url);
+                // assert.equal(url, 'http://beasiswa.polinema.ac.id/persyaratan','This Sould be Same');
+            })   
+        } catch (error) {
+            console.log(error);
+        }
+    })
+
+    it('Test case to redirect to /pengumuman', function(){
+        var xpathUrl = "//a[contains(text(),'Pengumuman')]"
+        browser.findElement(webdriver.By.xpath(xpathUrl)).click();
+
+        try {
+            browser.getCurrentUrl().then(function(url){
+                console.log(url);
+                // assert.equal(url, 'http://beasiswa.polinema.ac.id/persyaratan','This Sould be Same');
+            })   
+        } catch (error) {
+            console.log(error);
+        }
     })
 });
 
