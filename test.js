@@ -50,6 +50,10 @@ describe('Navbar Testing', function(){
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
     })
 
+    it('Test case to test search box', function(){
+        browser.findElement(webdriver.By.name('search')).sendKeys('Testing');
+    })
+
     it('Test case to redirect to /login', function(){
         var xpathUrl = "//a[contains(text(),'Login')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
@@ -59,6 +63,7 @@ describe('Navbar Testing', function(){
         var xpathUrl = "//a[contains(text(),'Kontak')]"
         browser.findElement(webdriver.By.xpath(xpathUrl)).click();
     })
+
     try {
         this.afterAll(function(){
             setTimeout(() => {
