@@ -1,3 +1,5 @@
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/no-ragrets.svg)](https://forthebadge.com)
+
 # Automate-Testing
 This automatic testing is based on JavaScript that using Selenium for the webdriver framework, Mocha for the javascript testing framework, and Chai also for the support library. This is what we are testing using this automatic testing : http://beasiswa.polinema.ac.id/pengumuman
 
